@@ -4,5 +4,7 @@ I couldn't use the NuGet package for Migrator Dot Net because it didn't have the
 
 the /targetplatform switch is very important. You'll get missing references to system.core and for anything targeting .net 4 (like lambdas) wouldn't compile correctly and would result in runtime errors (missing method exceptions)
 
+the /out name must be Migrator.Providers.dll. it cannot be named foo.bar.dll then renamed to Migrator.Providers.dll via windows because the name is baked into the assembly via ilmerge
+
 
 "C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe" /targetplatform:v4,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" "I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\Migrator.Providers.dll" "I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\MigratorNeo4j.dll" /out:"I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\output\Migrator.Providers.dll"
