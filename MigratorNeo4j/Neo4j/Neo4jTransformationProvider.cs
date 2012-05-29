@@ -260,7 +260,7 @@ namespace MigratorNeo4j.Neo4j
 
 		public void MigrationApplied(long version)
 		{
-			_graphClient.Update(_nodeReference.Reference,nodeFromDb =>nodeFromDb.Add(version));
+			_graphClient.Update(_nodeReference.Reference, nodeFromDb => nodeFromDb.Add(version));
 		}
 
 		public void MigrationUnApplied(long version)
@@ -386,7 +386,7 @@ namespace MigratorNeo4j.Neo4j
 
 			private void InitCollection()
 			{
-				if(Migrations == null)
+				if (Migrations == null)
 				{
 					Migrations = new List<long>();
 				}
