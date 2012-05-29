@@ -31,14 +31,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Migrator">
-      <HintPath>..\packages\MigratorDotNet.0.9.0.33276\lib\NET40\Migrator.dll</HintPath>
+    <Reference Include="Migrator, Version=0.9.0.28138, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\Migrator.dll</HintPath>
     </Reference>
-    <Reference Include="Migrator.Framework">
-      <HintPath>..\packages\MigratorDotNet.0.9.0.33276\lib\NET40\Migrator.Framework.dll</HintPath>
+    <Reference Include="Migrator.Framework, Version=0.9.0.26940, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\Migrator.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Migrator.Providers">
-      <HintPath>..\packages\MigratorDotNet.0.9.0.33276\lib\NET40\Migrator.Providers.dll</HintPath>
+    <Reference Include="Migrator.MSBuild">
+      <HintPath>..\Referenced Assemblies\Migrator.MSBuild.dll</HintPath>
+    </Reference>
+    <Reference Include="Migrator.NAnt">
+      <HintPath>..\Referenced Assemblies\Migrator.NAnt.dll</HintPath>
+    </Reference>
+    <Reference Include="Migrator.Providers, Version=0.9.0.26941, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referenced Assemblies\Migrator.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\Referenced Assemblies\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\Referenced Assemblies\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Referenced Assemblies\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Neo4jClient">
       <HintPath>..\packages\Neo4jClient.1.0.0.355\lib\Neo4jClient.dll</HintPath>
@@ -46,11 +64,22 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\Referenced Assemblies\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess">
+      <HintPath>..\Referenced Assemblies\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.102.7\lib\net35\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Referenced Assemblies\System.Data.SQLite.DLL</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

@@ -43,11 +43,6 @@ namespace MigratorNeo4j.CliqFlip
 
 		#region ITransformationProvider Members
 
-		public void Dispose()
-		{
-			_sqlServerTransformationProvider.Dispose();
-		}
-
 		public ITransformationProvider this[string provider]
 		{
 			get { return _sqlServerTransformationProvider[provider]; }
