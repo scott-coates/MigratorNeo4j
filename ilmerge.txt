@@ -1,1 +1,8 @@
+notes:
+
+I couldn't use the NuGet package for Migrator Dot Net because it didn't have the MSBuild project. The MSBuild assembly from the web references a different version than the nuget package.
+
+the /targetplatform switch is very important. You'll get missing references to system.core and for anything targeting .net 4 (like lambdas) wouldn't compile correctly and would result in runtime errors (missing method exceptions)
+
+
 "C:\Program Files (x86)\Microsoft\ILMerge\ILMerge.exe" /targetplatform:v4,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" "I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\Migrator.Providers.dll" "I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\MigratorNeo4j.dll" /out:"I:\My Documents\Visual Studio 2010\Projects\MigratorNeo4j\MigratorNeo4j\bin\Release\output\Migrator.Providers.dll"
