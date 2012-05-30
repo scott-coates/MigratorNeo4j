@@ -1,5 +1,7 @@
 notes:
 
+i started by using the real source but that became messy quickly. the projects were all signed which means you cannot use an assembly that isn't signed.
+
 I couldn't use the NuGet package for Migrator Dot Net because it didn't have the MSBuild project. The MSBuild assembly from the web references a different version than the nuget package.
 
 the /targetplatform switch is very important. You'll get missing references to system.core and for anything targeting .net 4 (like lambdas) wouldn't compile correctly and would result in runtime errors (missing method exceptions)
