@@ -376,6 +376,10 @@ namespace MigratorNeo4j.Neo4j
 			{
 				InitCollection();
 				Migrations.Remove(version);
+				if (Migrations.Count == 0)
+				{
+					Migrations = null;//neo4j can't accept an empty array with out a type [] so just don't pass it
+				}
 			}
 
 			public void Add(long version)
