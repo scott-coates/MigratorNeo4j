@@ -58,8 +58,9 @@
     <Reference Include="MySql.Data">
       <HintPath>..\Referenced Assemblies\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Neo4jClient">
-      <HintPath>..\packages\Neo4jClient.1.0.0.355\lib\Neo4jClient.dll</HintPath>
+    <Reference Include="Neo4jClient, Version=1.0.0.359, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Neo4jClient.1.0.0.359\lib\Neo4jClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>

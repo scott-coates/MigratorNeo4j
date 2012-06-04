@@ -354,7 +354,7 @@ namespace MigratorNeo4j.Neo4j
 				.StartCypher("n")
 				.Match("n <-[:SCHEMA_INFO_BELONGS_TO]-(x)")
 				.Return<Node<NeoSchemaVersion>>("x")
-				.ResultSet.FirstOrDefault();
+				.Results.FirstOrDefault();
 
 			if (schemaInfoNode == null)
 			{
