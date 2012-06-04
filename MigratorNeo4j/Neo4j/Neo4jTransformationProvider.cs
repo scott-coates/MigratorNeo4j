@@ -397,12 +397,6 @@ namespace MigratorNeo4j.Neo4j
 			}
 		}
 
-
-		[AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-		public sealed class NeoMigration : Attribute
-		{
-		}
-
 		public class SchemaInfoBelongsTo : Relationship,
 									 IRelationshipAllowingSourceNode<NeoSchemaVersion>,
 									 IRelationshipAllowingTargetNode<RootNode>
