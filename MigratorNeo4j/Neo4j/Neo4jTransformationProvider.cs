@@ -15,11 +15,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using Migrator.Framework;
 using Migrator.Framework.SchemaBuilder;
 using Migrator.Providers;
 using Neo4jClient;
 using Newtonsoft.Json;
+using RestSharp;
 using ForeignKeyConstraint = Migrator.Framework.ForeignKeyConstraint;
 
 namespace MigratorNeo4j.Neo4j
@@ -39,8 +41,26 @@ namespace MigratorNeo4j.Neo4j
 		{
 			_dialect = dialect;
 			_connectionString = connectionString;
-			_graphClient = new GraphClient(new Uri(connectionString));
-			_graphClient.Connect();
+
+            var rootUri = new Uri(connectionString);
+            string userInfo = rootUri.UserInfo; //username/pass for basic auth
+            
+            if (string.IsNullOrWhiteSpace(userInfo))
+            {
+                _graphClient = new GraphClient(rootUri);
+            }
+            else
+            {
+                //remove the @
+                connectionString = connectionString.Replace(userInfo + "@", "");
+
+                rootUri = new Uri(connectionString);
+
+                string[] userInfos = userInfo.Split(':');
+                _graphClient = new GraphClient(rootUri, new CliqFlipHttpFactory(userInfos[0], userInfos[1]));
+            }
+
+            _graphClient.Connect();
 		}
 
 		public void Dispose()
@@ -413,5 +433,33 @@ namespace MigratorNeo4j.Neo4j
 			{
 			}
 		}
+
+        public class CliqFlipHttpFactory : IHttpFactory
+        {
+            private readonly string _username;
+            private readonly string _password;
+
+            public CliqFlipHttpFactory(string username, string password)
+            {
+                _username = username;
+                _password = password;
+            }
+
+            #region IHttpFactory Members
+
+            public IHttp Create()
+            {
+                string str = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:{1}", _username, _password)));
+                string str2 = string.Format("Basic {0}", str);
+
+                var http = new Http();
+
+                http.Headers.Add(new HttpHeader { Name = "Authorization", Value = str2 });
+
+                return http;
+            }
+
+            #endregion
+        }
 	}
 }
