@@ -50,7 +50,12 @@ namespace MigratorNeo4j.CliqFlip
 
 		public List<long> AppliedMigrations
 		{
-			get { return _sqlServerTransformationProvider.AppliedMigrations.Concat(_neo4JTransformationProvider.AppliedMigrations ?? new List<long>()).ToList(); }
+			get 
+            { 
+                return _sqlServerTransformationProvider.AppliedMigrations.Concat(_neo4JTransformationProvider.AppliedMigrations ?? new List<long>())
+                .OrderBy(x=>x)
+                .ToList(); 
+            }
 		}
 
 		public ILogger Logger
