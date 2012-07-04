@@ -1,6 +1,6 @@
 # MigratorNeo4j
 
-Prevents access to Kiln for those who don't need it.
+ILMerged some custom Neo4j migration code with Migrator Dot Net.
 
 ## About MigratorNeo4j
 
