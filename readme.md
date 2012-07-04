@@ -8,5 +8,5 @@ ILMerged some custom Neo4j migration code with Migrator Dot Net. I know it's kin
 
 Built on the following projects:
 
-* [Neo4jClient] (http://code.google.com/p/migratordotnet/)
-* [MigratorDotNet] (http://hg.readify.net/neo4jclient/wiki/Home)
+* [Neo4jClient] (http://hg.readify.net/neo4jclient/wiki/Home)
+* [MigratorDotNet] (http://code.google.com/p/migratordotnet/)
